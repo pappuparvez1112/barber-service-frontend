@@ -5,6 +5,7 @@
 import { getServiceData } from "@/app/utils/serviceData";
 import ServiceCard from "@/components/view/Public/PublicCard";
 import { Card, Row } from "antd";
+import Link from "next/link";
 
 const ServicesPage = async () => {
   const data: any = await getServiceData();
@@ -40,23 +41,25 @@ const ServicesPage = async () => {
           <div className="flex gap-14 card-deck w-75 row mt-5 pt-5 mr-5 ">
             {data?.data?.map((service: any) => {
               return (
-                <ServiceCard key={data.id} title={service.category.title}>
-                  <Card
-                    hoverable
-                    style={{ width: 300 }}
-                    cover={
-                      <img
-                        className="w-full"
-                        src={service.serviceImage}
-                        width={500}
-                        height={300}
-                        alt={"pic"}
-                      ></img>
-                    }
-                  >
-                    <h1>{service.name}</h1>
-                    <p>{service.description}</p>
-                  </Card>
+                <ServiceCard key={data.id} title={"Book Now"}>
+                  <Link href={"/booking"}>
+                    <Card
+                      hoverable
+                      style={{ width: 300 }}
+                      cover={
+                        <img
+                          className="w-full"
+                          src={service.serviceImage}
+                          width={500}
+                          height={300}
+                          alt={"pic"}
+                        ></img>
+                      }
+                    >
+                      <h1>{service.name}</h1>
+                      <p>{service.description}</p>
+                    </Card>
+                  </Link>
                 </ServiceCard>
               );
             })}
