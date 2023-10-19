@@ -4,16 +4,16 @@ import Form from "@/components/forms/Form";
 import FormInput from "@/components/forms/FormInput";
 import FormTextAreaField from "@/components/forms/FormTextArea";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import { addAdminsData } from "@/services/addAdminDataFeching";
 
-import { useAddAdminWithFormDataMutation } from "@/redux/api/adminApi";
 import { Button, Col, Row, message } from "antd";
 const CreateAdmin = () => {
-  const [addAdminWithFormData] = useAddAdminWithFormDataMutation();
+  // const data=addAdminsData(data)
   const onSubmit = async (data: any) => {
     message.loading("creating.....");
     try {
       console.log(data);
-      const response = await addAdminWithFormData(data);
+      const response = await addAdminsData(data);
 
       message.success("Admin created successfully");
     } catch (err: any) {
@@ -34,18 +34,13 @@ const CreateAdmin = () => {
       <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput
-              size="large"
-              type="email"
-              name="admin.email"
-              label="Email"
-            />
+            <FormInput size="large" type="email" name="email" label="Email" />
           </Col>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormInput
               size="large"
               type="text"
-              name="admin.fullName"
+              name="fullName"
               label="FullName"
             />
           </Col>
@@ -60,17 +55,13 @@ const CreateAdmin = () => {
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormInput
               type="text"
-              name="admin.contactNo"
+              name="contactNo"
               size="large"
               label="ContactNo"
             />
           </Col>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormTextAreaField
-              name="admin.presentAddress"
-              label="Present Address"
-              rows={4}
-            />
+            <FormTextAreaField name="address" label="Address" rows={4} />
           </Col>
         </Row>
         <Button type="primary" htmlType="submit">

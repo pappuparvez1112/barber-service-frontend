@@ -2,32 +2,29 @@
 import LoginImage from "@/app/assets/Privacy policy-rafiki.png";
 import Form from "@/components/forms/Form";
 import FormInput from "@/components/forms/FormInput";
-import FormSelectField from "@/components/forms/FormSelectFields";
-import { roleOptions } from "@/constant/global";
+import FormTextAreaField from "@/components/forms/FormTextArea";
+import { addSignUpData } from "@/services/users/addSignupDataFetching";
 import { Button, Col, Row, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const onSubmit = async (values: any) => {
-  console.log(values);
-  const obj = { ...values };
-  console.log(obj);
-  const file = obj["file"];
-  console.log(file);
-  delete obj["file"];
-  const data = JSON.stringify(obj);
-  const formData = new FormData();
-  console.log(formData);
-  formData.append("file", file as Blob);
-  formData.append("data", data);
-  message.loading("Creating...");
-  try {
-    message.success("Admin created successfully!");
-  } catch (err: any) {
-    console.error(err.message);
-  }
-};
 const SignUpPage = () => {
+  const router = useRouter();
+
+  const onSubmit = async (data: any) => {
+    message.loading("creating.....");
+    try {
+      console.log(data);
+      const response = await addSignUpData(data);
+      router.push("/login");
+
+      message.success("User created successfully");
+    } catch (err: any) {
+      console.error(err.message);
+      message.error(err.message);
+    }
+  };
   return (
     <div>
       <Row
@@ -65,7 +62,7 @@ const SignUpPage = () => {
                     marginBottom: "10px",
                   }}
                 >
-                  Admin information
+                  USER INFORMATION
                 </p>
                 <Row
                   gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
@@ -74,16 +71,11 @@ const SignUpPage = () => {
                   <Col className="gutter-row" span={8}>
                     <FormInput
                       type="text"
-                      name="admin.fullName"
+                      name="fullName"
                       size="large"
-                      label="fullName"
+                      label="FullName"
                     />
                   </Col>
-                  <Col
-                    className="gutter-row"
-                    span={8}
-                    style={{ marginBottom: "10px" }}
-                  />
 
                   <Col
                     className="gutter-row"
@@ -109,18 +101,28 @@ const SignUpPage = () => {
                       label="Email"
                     />
                   </Col>
+                  <Col
+                    className="gutter-row"
+                    span={8}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <FormInput
+                      type="text"
+                      name="contactNo"
+                      size="large"
+                      label="ContactNo"
+                    />
+                  </Col>
 
                   <Col
                     className="gutter-row"
                     span={8}
                     style={{ marginBottom: "10px" }}
                   >
-                    <FormSelectField
-                      size="large"
-                      name="admin.gender"
-                      options={roleOptions}
-                      label="Role"
-                      placeholder="Select"
+                    <FormTextAreaField
+                      name="address"
+                      label="Address"
+                      rows={4}
                     />
                   </Col>
                 </Row>

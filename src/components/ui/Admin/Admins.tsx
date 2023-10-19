@@ -1,8 +1,8 @@
 "use client";
-import { getAdminsData } from "@/app/utils/adminDataFetching";
 import ActionBar from "@/components/ui/ActionBar";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
+import { getAdminsData } from "@/services/adminDataFetching";
 
 import { useDebounced } from "@/redux/hooks";
 import {

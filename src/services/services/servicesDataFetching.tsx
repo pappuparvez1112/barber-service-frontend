@@ -1,14 +1,14 @@
 "use server";
 
+import { authOptions } from "@/app/lib/AuthOption";
+import { Admin } from "@/interfaces";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../lib/AuthOption";
-
-export const getAdminsData = async () => {
+export const getServicesData = async (): Promise<Admin[]> => {
   const session: any = await getServerSession(authOptions);
   console.log(session, "service token");
 
   const res = await fetch(
-    "https://barber-service-backend.vercel.app/api/v1/admins",
+    "https://barber-service-backend.vercel.app/api/v1/services",
     {
       method: "GET",
       headers: {
@@ -16,11 +16,11 @@ export const getAdminsData = async () => {
         Authorization: session?.accessToken,
       },
       next: {
-        tags: ["All admins"],
+        tags: ["All Services"],
       },
     }
   );
-  const data = await res.json();
+  const { data } = await res.json();
   console.log(data, "data");
   if (res.ok && data) {
     return data;

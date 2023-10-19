@@ -7,7 +7,8 @@ const UserHeader = async () => {
     { key: "1", label: "Home", href: "/" },
     { key: "2", label: "Appointment", href: "/my-appointment" },
     { key: "3", label: "Contact", href: "/contact-us" },
-    { key: "3", label: "Services", href: "/services" },
+    { key: "4", label: "Services", href: "/services" },
+    { key: "5", label: "Dashboard", href: "/dashboard" },
   ];
   const session = await getServerSession(authOptions);
   return <NavBar session={session ? true : false} items={items} />;
