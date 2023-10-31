@@ -1,5 +1,5 @@
 "use client";
-import { Carousel, Col, Row } from "antd";
+import { Carousel } from "antd";
 import Image from "next/image";
 import React from "react";
 import BarberOne from "src/app/assets/carosel2.jpg";
@@ -27,49 +27,48 @@ const HeroSection = () => {
   // };
 
   return (
-    <div className="heroBlock">
-      <Row>
-        <Col lg={34}>
-          <Carousel
-            autoplay
+    <div className="relative">
+      <Carousel
+        autoplay
 
-            // afterChange={onChange}
-          >
-            <div>
-              <h3 style={contentStyle}>
-                <Image
-                  src={BarberOne}
-                  width={1550}
-                  height={800}
-                  alt="login image1"
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "30%",
-                    left: "50%",
-                    transform: "translate(-50%,-50%)",
-                    // background: "rgba(0, 0, 0, 0.5)",
-                    color: "#fff",
-                    padding: "20px",
-                    textAlign: "center",
-                  }}
-                >
-                  <h1>Welcome to our Service 1</h1>
-                  <p>We have a excellent Emvironment</p>
-                </div>
-              </h3>
+        // afterChange={onChange}
+      >
+        <div className="h-[50vh]">
+          <h3 style={contentStyle}>
+            <Image
+              className=" object-cover"
+              src={BarberOne}
+              width={1520}
+              height={800}
+              alt="login image1"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "30%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+                // background: "rgba(0, 0, 0, 0.5)",
+                color: "#fff",
+                padding: "20px",
+                textAlign: "center",
+              }}
+            >
+              <h1>Welcome to our Service 1</h1>
+              <p>We have a excellent Emvironment</p>
             </div>
+          </h3>
+        </div>
 
-            <div>
-              <h3 style={contentStyle}>
-                <Image
-                  src={BarberTwo}
-                  width={1550}
-                  height={800}
-                  alt="login image2"
-                />
-                {/* <div
+        <div>
+          <h3 style={contentStyle}>
+            <Image
+              src={BarberTwo}
+              width={1550}
+              height={800}
+              alt="login image2"
+            />
+            {/* <div
                   style={{
                     position: "absolute",
                     top: "30%",
@@ -84,18 +83,18 @@ const HeroSection = () => {
                   <h1>Welcome to our Service2</h1>
                   <p>We have a excellent Emvironment</p>
                 </div> */}
-              </h3>
-            </div>
+          </h3>
+        </div>
 
-            <div>
-              <h3 style={contentStyle}>
-                <Image
-                  src={BarberThree}
-                  width={1550}
-                  height={800}
-                  alt="login image3"
-                />
-                {/* <div
+        <div>
+          <h3 style={contentStyle}>
+            <Image
+              src={BarberThree}
+              width={1550}
+              height={800}
+              alt="login image3"
+            />
+            {/* <div
                   style={{
                     position: "absolute",
                     top: "30%",
@@ -110,11 +109,9 @@ const HeroSection = () => {
                   <h1>Welcome to our Service3</h1>
                   <p>We have a excellent Emvironment</p>
                 </div> */}
-              </h3>
-            </div>
-          </Carousel>
-        </Col>
-      </Row>
+          </h3>
+        </div>
+      </Carousel>
     </div>
   );
 };

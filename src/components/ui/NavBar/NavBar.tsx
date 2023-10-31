@@ -41,8 +41,8 @@ const NavBar = ({
   const pathname = usePathname();
   const dispatch = useAppDispatch();
   return (
-    <Layout className="layout z-10 bg-opacity-40 bg-black text-white justify-between">
-      <Header className="flex items-center  ">
+    <Layout className="sm:container layout justify-between">
+      <Header className="flex items-center justify-between ">
         <Content className="flex gap-4 ">
           {/* redux use small device */}
           <Button

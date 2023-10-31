@@ -22,5 +22,5 @@ export const addServicesData = async (data: any) => {
   );
   const response = await res.json();
   console.log(response);
-  revalidateTag("all-doctors");
+  revalidateTag("all-Services");
 };

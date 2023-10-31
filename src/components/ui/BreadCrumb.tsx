@@ -1,7 +1,7 @@
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
-const UMBreadcrumb = ({
+const BreadCrumb = ({
   items,
 }: {
   items: {
@@ -30,4 +30,4 @@ const UMBreadcrumb = ({
   return <Breadcrumb items={breadCrumbItems}></Breadcrumb>;
 };
 
-export default UMBreadcrumb;
+export default BreadCrumb;

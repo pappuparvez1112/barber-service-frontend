@@ -1,9 +1,9 @@
 "use server";
 
 import { authOptions } from "@/app/lib/AuthOption";
-import { Admin } from "@/interfaces";
+import { Category } from "@/interfaces";
 import { getServerSession } from "next-auth";
-export const getCategoriesData = async (): Promise<Admin[]> => {
+export const getCategoriesData = async (): Promise<Category[]> => {
   const session: any = await getServerSession(authOptions);
   console.log(session, "service token");
 

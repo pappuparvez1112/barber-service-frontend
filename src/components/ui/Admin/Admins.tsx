@@ -1,6 +1,6 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import BreadCrumb from "@/components/ui/BreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { getAdminsData } from "@/services/adminDataFetching";
 
@@ -128,7 +128,7 @@ const AdminPage = () => {
   };
   return (
     <div>
-      <UMBreadCrumb
+      <BreadCrumb
         items={[
           {
             label: "super_admin",

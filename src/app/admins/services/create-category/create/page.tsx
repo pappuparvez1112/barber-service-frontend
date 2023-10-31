@@ -2,7 +2,7 @@
 
 import Form from "@/components/forms/Form";
 import FormInput from "@/components/forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import BreadCrumb from "@/components/ui/BreadCrumb";
 import { addCategoriesData } from "@/services/services/category/addCategory";
 
 import { Button, Col, Row, message } from "antd";
@@ -23,7 +23,7 @@ const CreateCategory = () => {
   const base = "Admin";
   return (
     <div>
-      <UMBreadCrumb
+      <BreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           {

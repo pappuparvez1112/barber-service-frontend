@@ -41,17 +41,18 @@ const LoginPage = () => {
   };
   return (
     <Row
+      className="container"
       justify="center"
       align="middle"
       style={{
         minHeight: "100vh",
       }}
     >
-      <Col sm={12} md={16} lg={10}>
-        <Image src={LoginImage} width={500} alt="login image" />
+      <Col className="order-1" sm={12} md={16} lg={10}>
+        <Image src={LoginImage} width={400} height={400} alt="login image" />
       </Col>
 
-      <Col sm={12} md={8} lg={8}>
+      <Col className="order-2 p-8" sm={12} md={8} lg={8}>
         <h1
           style={{
             margin: "15px 0",

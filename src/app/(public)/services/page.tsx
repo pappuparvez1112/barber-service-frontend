@@ -2,7 +2,7 @@ import ServicesPage from "@/components/ui/Services/Services";
 
 const Services = () => {
   return (
-    <div>
+    <div className="md:container md:mx-auto">
       <ServicesPage />
     </div>
   );

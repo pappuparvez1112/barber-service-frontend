@@ -3,7 +3,7 @@
 import Form from "@/components/forms/Form";
 import FormInput from "@/components/forms/FormInput";
 import FormTextAreaField from "@/components/forms/FormTextArea";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import BreadCrumb from "@/components/ui/BreadCrumb";
 import { addAdminsData } from "@/services/addAdminDataFeching";
 
 import { Button, Col, Row, message } from "antd";
@@ -24,7 +24,7 @@ const CreateAdmin = () => {
   const base = "super_admin";
   return (
     <div>
-      <UMBreadCrumb
+      <BreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "Admin", link: `/${base}/admin` },

@@ -4,7 +4,7 @@ import Image from "next/image";
 import featured from "src/app/assets/service.jpg";
 const AboutPage = () => {
   return (
-    <section className="features-service pb-0 pb-md-5 mt-12  ">
+    <section className="pb-0 pb-md-5 mt-20 mb-10">
       <div className=" container mb-5">
         <div className=" flex row mb-5 ">
           <div className="col-md-7 mb-4 m-md-0">

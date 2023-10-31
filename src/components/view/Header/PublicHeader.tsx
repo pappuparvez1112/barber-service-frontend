@@ -11,7 +11,11 @@ const PublicHeader = async () => {
     { key: "5", label: "Dashboard", href: "/dashboard" },
   ];
   const session = await getServerSession(authOptions);
-  return <NavBar session={session ? true : false} items={items} />;
+  return (
+    <div className="md:container sm:container sm:mx-auto  md:mx-auto navbar fixed z-10 bg-opacity-30 bg-black text-white ">
+      <NavBar session={session ? true : false} items={items} />
+    </div>
+  );
 };
 
 export default PublicHeader;
