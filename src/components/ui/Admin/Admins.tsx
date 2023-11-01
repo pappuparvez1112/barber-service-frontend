@@ -1,7 +1,7 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import BreadCrumb from "@/components/ui/BreadCrumb";
-import UMTable from "@/components/ui/UMTable";
+
+import UMTable from "@/components/ui/Table";
 import { getAdminsData } from "@/services/adminDataFetching";
 
 import { useDebounced } from "@/redux/hooks";
@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 
 import { useState } from "react";
+import BreadCrumb from "../BreadCrumb";
 
 const AdminPage = () => {
   const query: Record<string, any> = {};

@@ -18,25 +18,7 @@ const ReviewPage = async () => {
       <div className=" mb-10 mt-10 ml-12 ">
         {data?.data?.map((review: any) => {
           return (
-            // <ReviewCard key={data.id} title={"Client Reviews"}>
-            //   <Card
-            //     hoverable
-            //     style={{ width: 300 }}
-            //     cover={
-            //       <img
-            //         className="w-full"
-            //         src={review.service.serviceImage}
-            //         width={500}
-            //         height={300}
-            //         alt={"pic"}
-            //       ></img>
-            //     }
-            //   >
-            //     <h1>{review.service.name}</h1>
-            //     <h1>{review.user.fullName}</h1>
-            //     <p>{review.review}</p>
-            //   </Card>
-            // </ReviewCard>
+          
             <div
               key={data.id}
               className="max-w-sm mx-auto p-8 bg-white rounded-xl shadow-md space-y-2"

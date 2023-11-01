@@ -32,6 +32,7 @@ const LoginPage = () => {
       });
       // console.log(result);
       if (result?.ok && !result.error) {
+        router.refresh();
         router.push("/");
         message.success("User logged in successfully");
       }

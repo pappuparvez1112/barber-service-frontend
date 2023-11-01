@@ -11,9 +11,10 @@ const userAccessibleRoutes = [
 ];
 
 const rolesRedirect: Record<string, unknown> = {
-  user: "http://localhost:3000/dashboard",
-  admin: "http://localhost:3000/admins/dashboard",
-  super_admin: "http://localhost:3000/super_admin/dashboard",
+  user: "https://barber-service-frontend.vercel.app/dashboard",
+  admin: "https://barber-service-frontend.vercel.app/admins/dashboard",
+  super_admin:
+    "https://barber-service-frontend.vercel.app/super_admin/dashboard",
 };
 export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
@@ -23,7 +24,9 @@ export async function middleware(request: NextRequest) {
     if (hybridRoutes.includes(pathname)) {
       return NextResponse.next();
     }
-    return NextResponse.redirect("http://localhost:3000/login");
+    return NextResponse.redirect(
+      "https://barber-service-frontend.vercel.app/login"
+    );
   }
   const role = token?.role as string;
   if (
@@ -36,7 +39,7 @@ export async function middleware(request: NextRequest) {
   if (
     pathname === "/" &&
     (role === "admin" || role === "super_admin") &&
-    rolesRedirect
+    rolesRedirect[role]
   ) {
     return NextResponse.redirect(rolesRedirect[role] as string);
   }
@@ -47,7 +50,14 @@ export async function middleware(request: NextRequest) {
   // ) {
   //   return NextResponse.redirect(rolesRedirect[role] as string);
   // }
-  // return NextResponse.redirect("http://localhost:3000/login");
+  // return NextResponse.redirect(
+  //   "https://barber-service-frontend.vercel.app/login"
+  // );
+  const response = NextResponse.redirect(
+    "https://barber-service-frontend.vercel.app"
+  );
+  response.cookies.delete("next-auth.session-token");
+  return response;
 }
 
 // See "Matching Paths" below to learn more

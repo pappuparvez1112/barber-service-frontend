@@ -33,34 +33,7 @@ const ServicesPage = async () => {
           you look stylish and confident, and most importantly, manly
         </p>
       </div>
-      {/* <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-        <div className="container grid gap-4 grid-cols-3 grid-rows-2   mt-5 pt-5 mr-5  ">
-          {data?.data?.map((service: any) => {
-            return (
-              <ServiceCard  key={data.id} title={"Book Now"}>
-                <Link href={"/booking"}>
-                  <Card
-                    hoverable
-                    style={{ width: 300 }}
-                    cover={
-                      <img
-                        className="w-full"
-                        src={service.serviceImage}
-                        width={500}
-                        height={300}
-                        alt={"pic"}
-                      ></img>
-                    }
-                  >
-                    <h1>{service.name}</h1>
-                    <p>{service.description}</p>
-                  </Card>
-                </Link>
-              </ServiceCard>
-            );
-          })}
-        </div>
-      </Row> */}
+     
 
       <div className="container max-w-[1000px] ml-64  grid gap-32 grid-cols-3 grid-rows-2 mt-5 pt-5 mr-5">
         {data?.data?.map((service: any) => {
