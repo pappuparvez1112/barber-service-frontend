@@ -17,6 +17,7 @@ const CategoryField = ({ name, label, categories }: CategoryFieldProps) => {
 
   return (
     <FormSelectField
+      size="large"
       name={name}
       label={label}
       options={categoryOptions as SelectOptions[]}

@@ -11,10 +11,9 @@ const userAccessibleRoutes = [
 ];
 
 const rolesRedirect: Record<string, unknown> = {
-  user: "https://barber-service-frontend.vercel.app/dashboard",
-  admin: "https://barber-service-frontend.vercel.app/admins/dashboard",
-  super_admin:
-    "https://barber-service-frontend.vercel.app/super_admin/dashboard",
+  user: "http://localhost:3000/dashboard",
+  admin: "http://localhost:3000/admins/dashboard",
+  super_admin: "http://localhost:3000/super_admin/dashboard",
 };
 export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
@@ -24,9 +23,7 @@ export async function middleware(request: NextRequest) {
     if (hybridRoutes.includes(pathname)) {
       return NextResponse.next();
     }
-    return NextResponse.redirect(
-      "https://barber-service-frontend.vercel.app/login"
-    );
+    return NextResponse.redirect("http://localhost:3000/login");
   }
   const role = token?.role as string;
   if (
@@ -51,11 +48,9 @@ export async function middleware(request: NextRequest) {
   //   return NextResponse.redirect(rolesRedirect[role] as string);
   // }
   // return NextResponse.redirect(
-  //   "https://barber-service-frontend.vercel.app/login"
+  //   "http://localhost:3000login"
   // );
-  const response = NextResponse.redirect(
-    "https://barber-service-frontend.vercel.app"
-  );
+  const response = NextResponse.redirect("http://localhost:3000");
   response.cookies.delete("next-auth.session-token");
   return response;
 }

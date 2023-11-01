@@ -27,8 +27,8 @@ const CreateServiceForm = ({ categories }: { categories: [] }) => {
   const onSubmit = async (data: any) => {
     message.loading("creating.....");
     try {
-      console.log(data);
       const response = await addServicesData(data);
+      console.log(response);
 
       message.success("Services created successfully");
     } catch (err: any) {
@@ -60,7 +60,7 @@ const CreateServiceForm = ({ categories }: { categories: [] }) => {
           </Col> */}
           <Col className="gutter-row" span={8} style={{ marginBottom: "10px" }}>
             <CategoryField
-              name="category"
+              name="categoryId"
               label="Category"
               categories={categories}
             />
