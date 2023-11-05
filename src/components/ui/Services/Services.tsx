@@ -2,12 +2,11 @@
 // /* eslint-disable @next/next/no-async-client-component */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { getServiceData } from "@/app/utils/serviceData";
 
-const ServicesPage = async () => {
-  const data: any = await getServiceData();
+const ServicesPage = async ({ data }: any) => {
+  // const data: any = await getServiceData();
 
-  console.log(data);
+  // console.log(data);
 
   // const onclickHandler = async (id: string) => {
   //   message.loading("details.....");
@@ -22,35 +21,38 @@ const ServicesPage = async () => {
   //   }
   // };
   return (
-    <div className="md:container mx-auto mb-10">
-      <div className="justify-center text-center mt-12 ">
-        <h1 className="mb-6" style={{ color: "#1CC7C1" }}>
+    <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <div className="text-center mt-6 sm:mt-12 ">
+        <h1 className="text-3xl sm:text-4xl font-semibold mb-4 text-teal-500">
           OUR SERVICES
         </h1>
-        <h2 className="mb-3">What We Do</h2>
-        <p className="mb-6">
-          We run a men’s barbershop in its best traditions. Our guys will help
-          you look stylish and confident, and most importantly, manly
+        <h2 className="text-lg sm:text-xl text-white mb-2">What We Do</h2>
+        <p className="text-lg sm:text-xl text-white mb-4">
+          We run a men’s barbershop in its best traditions. Our team will help
+          you look stylish and confident, and most importantly, manly.
         </p>
       </div>
-     
 
-      <div className="container max-w-[1000px] ml-64  grid gap-32 grid-cols-3 grid-rows-2 mt-5 pt-5 mr-5">
-        {data?.data?.map((service: any) => {
+      <div className="container md:container sm:container max-w-[1050px] grid gap-5 sm:gap-8 md:gap-14 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 pt-5 mx-5">
+        {data?.data?.map((service: any, index: number) => {
           return (
             <div
-              className="bg-white rounded-lg shadow-lg overflow-hidden container"
-              key={data.id}
+              className="bg-white rounded-lg shadow-lg overflow-hidden mb-5 sm:mb-10 md:mb-16 p-4"
+              key={index}
             >
               <img
-                className="w-72 h-48 object-cover"
+                className="w-full object-cover"
                 src={service.serviceImage}
                 alt="Image Alt Text"
               />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold mb-2">Book Now</h2>
-                <p className="text-gray-600 mb-2">{service.name}</p>
-                <p className="text-gray-600">{service.description}</p>
+              <div className="mt-4">
+                <h2 className="text-xl sm:text-2xl font-semibold mb-2">
+                  {service.name}
+                </h2>
+                <p className="text-gray-600 mb-2">{service.description}</p>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none">
+                  Book Now
+                </button>
               </div>
             </div>
           );
