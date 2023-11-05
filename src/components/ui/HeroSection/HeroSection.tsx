@@ -7,7 +7,6 @@ import BarberThree from "src/app/assets/carusel1.jpg";
 // const contentStyle: React.CSSProperties = {
 //   margin: 0,
 //   height: "600px",
-//   width: "800px",
 // };
 // const content-overlay:React.CSSProperties= {
 //   position: absolute;
@@ -28,14 +27,19 @@ const HeroSection = () => {
   return (
     <div className="container md:container sm:container lg:container mx-auto  items-center relative">
       <Carousel className="" autoplay>
-        <div>
-          <h3>
-            <Image
-              className="object-cover w-full h-full"
-              src={BarberOne}
-              alt="login image1"
-            />
-            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
+        <div className="w-full relative pt-[50%]">
+          <Image
+            // width={1024}
+            // height={400}
+            objectFit="cover"
+            fill
+            className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+            src={BarberOne}
+            alt="login image1"
+
+            // fill={true}
+          />
+          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2">
                 Welcome to our Service 1
               </h1>
@@ -43,17 +47,21 @@ const HeroSection = () => {
                 We have an excellent environment
               </p>
             </div> */}
-          </h3>
         </div>
 
-        <div>
-          <h3>
-            <Image
-              className="object-cover w-full h-full"
-              src={BarberTwo}
-              alt="login image2"
-            />
-            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
+        <div className="w-full relative pt-[50%]">
+          <Image
+            // width={1024}
+            // height={400}
+            // fill={true}
+            // className="object-cover w-full h-full "
+            objectFit="cover"
+            fill
+            className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+            src={BarberTwo}
+            alt="login image2"
+          />
+          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2">
                 Welcome to our Service 2
               </h1>
@@ -61,17 +69,20 @@ const HeroSection = () => {
                 We have an excellent environment
               </p>
             </div> */}
-          </h3>
         </div>
 
-        <div>
-          <h3>
-            <Image
-              className="object-cover w-full h-full"
-              src={BarberThree}
-              alt="login image3"
-            />
-            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
+        <div className="w-full relative pt-[50%]">
+          <Image
+            // width={1024}
+            // height={400}
+            // fill={true}
+            objectFit="cover"
+            fill
+            className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+            src={BarberThree}
+            alt="login image3"
+          />
+          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 text-center">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2">
                 Welcome to our Service 3
               </h1>
@@ -79,7 +90,6 @@ const HeroSection = () => {
                 We have an excellent environment
               </p>
             </div> */}
-          </h3>
         </div>
       </Carousel>
     </div>

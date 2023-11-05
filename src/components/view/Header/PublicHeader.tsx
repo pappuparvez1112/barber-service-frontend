@@ -12,7 +12,7 @@ const PublicHeader = async () => {
   ];
   const session = await getServerSession(authOptions);
   return (
-    <div className="container md:container sm:container sm:mx-auto  md:mx-auto navbar sm:fixed md:fixed lg:fixed z-10 bg-opacity-30 bg-black text-white ">
+    <div className="container  sticky top-0 z-10 bg-opacity-30 bg-black text-white ">
       <NavBar session={session ? true : false} items={items} />
     </div>
   );

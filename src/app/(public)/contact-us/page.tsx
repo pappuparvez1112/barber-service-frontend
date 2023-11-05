@@ -1,5 +1,9 @@
 const ContactPage = () => {
-  return <div>ContactPage</div>;
+  return (
+    <div>
+      <h1 className="text-[#ffff]">ContactPage</h1>
+    </div>
+  );
 };
 
 export default ContactPage;

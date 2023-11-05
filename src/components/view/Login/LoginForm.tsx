@@ -30,10 +30,10 @@ const LoginPage = () => {
         redirect: false,
         // callbackUrl: "/",
       });
-      // console.log(result);
+      console.log(result);
       if (result?.ok && !result.error) {
-        router.refresh();
         router.push("/");
+        router.refresh();
         message.success("User logged in successfully");
       }
     } catch (err: any) {
@@ -55,6 +55,7 @@ const LoginPage = () => {
 
       <Col className="order-2 p-8" sm={12} md={8} lg={8}>
         <h1
+          className="text-[#ffffff]"
           style={{
             margin: "15px 0",
           }}
@@ -63,8 +64,14 @@ const LoginPage = () => {
         </h1>
         <div>
           <Form submitHandler={onSubmit}>
-            <div>
-              <FormInput name="email" type="email" size="large" label="Email" />
+            <div className="text-[#ffffff]">
+              <FormInput
+                placeholder="Input your Email"
+                name="email"
+                type="email"
+                size="large"
+                label="Email"
+              />
             </div>
             <div
               style={{
@@ -75,6 +82,7 @@ const LoginPage = () => {
               }}
             >
               <div
+                className="text-[#ffffff]"
                 style={{
                   width: 400,
                 }}

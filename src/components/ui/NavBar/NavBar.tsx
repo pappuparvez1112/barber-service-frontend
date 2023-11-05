@@ -41,7 +41,7 @@ const NavBar = ({
   const pathname = usePathname();
   const dispatch = useAppDispatch();
   return (
-    <Layout className="sm:container layout justify-between">
+    <Layout className="container md:container sm:container lg:container layout justify-between">
       <Header className="flex items-center justify-between ">
         <Content className="flex gap-4 ">
           {/* redux use small device */}
@@ -118,6 +118,20 @@ const NavBar = ({
                 </Menu.Item>
               );
             })}
+            {session ? (
+              <Button type="primary" onClick={() => signOut()}>
+                Sign out
+              </Button>
+            ) : (
+              <Button
+                type="primary"
+                onClick={() => {
+                  router.push("/login");
+                }}
+              >
+                Sign In/Register
+              </Button>
+            )}
           </Menu>
         </Drawer>
       </Header>

@@ -7,21 +7,20 @@ import { getReviewData } from "@/app/utils/serviceData";
 const ReviewPage = async () => {
   const data = await getReviewData();
   return (
-    <div className="container text-center card  d-flex col-md-3 ms-5 ">
+    <div className="container text-center card mx-auto  d-flex mt-36 mb-36">
       <div className="section-header mb-5">
-        <h1 className="text-primary text-uppercase mt-5">REVIEWS</h1>
-        <h3 className="mt-5">
+        <h1 className="text-[#FEF9EC] text-uppercase mt-5">REVIEWS</h1>
+        <h3 className="mt-5 text-[#FEF9EC]">
           What Our Client says <br /> Says{" "}
         </h3>
       </div>
 
-      <div className=" mb-10 mt-10 ml-12 ">
+      <div className=" mb-10 mt-10 col-md-3 sm:ml-0 lg:ml-16  lg:max-w-[900px] md:max-w-[900px] sm:max-w-[700px] ">
         {data?.data?.map((review: any) => {
           return (
-          
             <div
               key={data.id}
-              className="max-w-sm mx-auto p-8 bg-white rounded-xl shadow-md space-y-2"
+              className="max-w-[300px] mx-auto sm:mx-0 p-8 bg-[#FEF9EC] rounded-xl shadow-md space-y-2"
             >
               <img
                 className="h-24 mx-auto rounded-full ring-4"
